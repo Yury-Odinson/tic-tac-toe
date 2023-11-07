@@ -1,4 +1,4 @@
-import { buttonNewGame, game } from "./declaration.js";
+import { buttonNewGame, player1WinCounter, player2WinCounter } from "./declaration.js";
 
 const cells = document.querySelectorAll(".cell");
 
@@ -8,6 +8,9 @@ let isGame = true;
 let player = "first";
 // game field, where will be write player's move
 let gameField = ["", "", "", "", "", "", "", ""];
+
+export let player1Wins = 0;
+export let player2Wins = 0;
 
 // playerN - current player; cell - cell on the playing field
 function playersMove(playerN, cell) {
@@ -50,9 +53,20 @@ function checkWinner() {
         if (gameField[a] === gameField[b] && gameField[b] === gameField[c]) {
             if (gameField[c] !== "") {
                 isGame = false;
+                getWinnerName(gameField[c]);
                 return console.log(`${gameField[c]} is winner`);
             }
         }
+    }
+}
+
+function getWinnerName(symbol) {
+    if (symbol === "X") {
+        player1Wins++;
+        return player1WinCounter.innerHTML = `has ${player1Wins} wins`;
+    } else {
+        player2Wins++;
+        return player2WinCounter.innerHTML = `has ${player2Wins} wins`;
     }
 }
 

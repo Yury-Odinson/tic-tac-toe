@@ -1,5 +1,5 @@
 :root {
-    --BackgroundDark: #F0ECF4;
+    --Background: #F0ECF4;
     --Primary: #ffa31a;
     --halfPrimary: #fad6a0;
     --Secondary: #808080;
@@ -17,7 +17,7 @@ html {
     text-decoration: none;
     list-style-type: none;
     outline: none;
-    background-color: var(--BackgroundDark);
+    background-color: var(--Background);
     transition: 0.2s;
 }
 
