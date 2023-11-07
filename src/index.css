@@ -1,8 +1,9 @@
 .wrapper {
     margin: 100px auto;
+    padding: 40px;
     display: flex;
-    max-width: 960px;
-    height: 500px;
+    max-width: 700px;
+    /* height: 500px; */
     background-color: #fff;
     border-radius: 20px;
     -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
@@ -40,4 +41,41 @@
     font-weight: 900;
 }
 
+.game-setting {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30%;
+}
 
+.game-setting-players {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.game-setting-players>label>span {
+    padding-left: 20px;
+}
+
+.game-setting-players>label>input {
+    margin-top: 5px;
+    padding: 10px;
+    width: 100%;
+    height: 30px;
+    font-size: 20px;
+    background-color: var(--Background);
+    border: none;
+    border-radius: 6px;
+}
+
+.game-setting-score {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.game-setting-score-row {
+    display: flex;
+    justify-content: space-between;
+}

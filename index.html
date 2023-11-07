@@ -20,29 +20,52 @@
     <div class="wrapper">
 
         <div class="game-container">
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+        </div>
 
-            <div class="row">
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
+        <div class="game-setting">
+            <div class="game-setting-players">
+                <label>
+                    <span>Player 1 name:</span>
+                    <input type="text" placeholder="First player" maxlength="10" id="inputPlayer1Name">
+                </label>
+                <label>
+                    <span>Player 2 name:</span>
+                    <input type="text" placeholder="Second player" maxlength="10" id="inputPlayer2Name">
+                </label>
             </div>
-            <div class="row">
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-            </div>
-            <div class="row">
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
+
+            <div class="game-setting-score">
+                <div class="game-setting-score-row">
+                    <span id="player1_id"></span> <span id="player1CounterWin"></span>
+                </div>
+                <div class="game-setting-score-row">
+                    <span id="player2_id"></span> <span id="player2CounterWin"></span>
+                </div>
             </div>
 
             <button class="game-b__newGame">new game</button>
         </div>
 
+
     </div>
 
     <script type="module" src="./src/js/index.js"></script>
+    <script type="module" src="./src/js/players.js"></script>
 </body>
 
 </html>
