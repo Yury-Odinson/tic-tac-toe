@@ -1,5 +1,5 @@
 import { drawAlert } from "./UI.js";
-import { buttonNewGame, player1Name, player1WinCounter, player2Name, player2WinCounter } from "./declaration.js";
+import { buttonNewGame, drawCounter, player1Name, player1WinCounter, player2Name, player2WinCounter } from "./declaration.js";
 
 const cells = document.querySelectorAll(".cell");
 // variable, that shows the game is active or not
@@ -13,6 +13,7 @@ let winner = "";
 
 export let player1Wins = 0;
 export let player2Wins = 0;
+export let draw = 0;
 
 // playerN - current player; cell - cell on the playing field
 function playersMove(playerN, cell) {
@@ -58,6 +59,12 @@ function checkWinner() {
                 getWinnerName(gameField[c]);
                 return drawAlert(`${winner} wins`);
             }
+        }
+        if (!gameField.includes("") && isGame) {
+            draw++;
+            drawCounter.innerHTML = ` ${draw}`;
+            drawAlert("draw");
+            return isGame = false;
         }
     }
 }
