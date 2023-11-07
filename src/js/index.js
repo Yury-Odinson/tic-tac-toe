@@ -1,13 +1,15 @@
-import { buttonNewGame, player1WinCounter, player2WinCounter } from "./declaration.js";
+import { drawAlert } from "./UI.js";
+import { buttonNewGame, player1Name, player1WinCounter, player2Name, player2WinCounter } from "./declaration.js";
 
 const cells = document.querySelectorAll(".cell");
-
 // variable, that shows the game is active or not
 let isGame = true;
 // current player who must be set item in cell
 let player = "first";
 // game field, where will be write player's move
 let gameField = ["", "", "", "", "", "", "", ""];
+
+let winner = "";
 
 export let player1Wins = 0;
 export let player2Wins = 0;
@@ -54,7 +56,7 @@ function checkWinner() {
             if (gameField[c] !== "") {
                 isGame = false;
                 getWinnerName(gameField[c]);
-                return console.log(`${gameField[c]} is winner`);
+                return drawAlert(`${winner} wins`);
             }
         }
     }
@@ -63,10 +65,12 @@ function checkWinner() {
 function getWinnerName(symbol) {
     if (symbol === "X") {
         player1Wins++;
-        return player1WinCounter.innerHTML = `has ${player1Wins} wins`;
+        player1WinCounter.innerHTML = `has ${player1Wins} wins`;
+        return winner = `${player1Name.innerHTML}`;
     } else {
         player2Wins++;
-        return player2WinCounter.innerHTML = `has ${player2Wins} wins`;
+        player2WinCounter.innerHTML = `has ${player2Wins} wins`;
+        return winner = `${player2Name.innerHTML}`;
     }
 }
 
